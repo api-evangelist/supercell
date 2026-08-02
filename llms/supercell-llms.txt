@@ -1,0 +1,36 @@
+# Supercell
+
+> Supercell is the Finnish mobile game developer behind Clash of Clans, Clash Royale, Brawl Stars, Hay Day, Boom Beach and Squad Busters. It operates three official public game APIs that expose read-only game data (clans, players, leaderboards, leagues, cards, brawlers, events). Access uses a JWT bearer API token created in each game's developer portal and locked to whitelisted IP addresses.
+
+## APIs
+
+- [Clash of Clans API](https://developer.clashofclans.com): Clan search, global/local leaderboards, clan and player profiles, leagues, war logs, capital raid seasons, Gold Pass. Base URL https://api.clashofclans.com/v1
+- [Clash Royale API](https://developer.clashroyale.com): Clan and player profiles, cards, tournaments, challenges, global tournaments, locations/leaderboards. Base URL https://api.clashroyale.com/v1
+- [Brawl Stars API](https://developer.brawlstars.com): Player and club profiles, club members, rankings, brawlers, gadgets/star-powers, events. Base URL https://api.brawlstars.com/v1
+
+## Authentication
+
+- [Auth model](https://developer.clashofclans.com/#/documentation): HTTP bearer token (JWT) created in the developer portal, IP-whitelisted, passed as `Authorization: Bearer <token>`. All endpoints are read-only.
+
+## Docs
+
+- [Clash of Clans documentation](https://developer.clashofclans.com/#/documentation)
+- [Clash of Clans getting started](https://developer.clashofclans.com/#/getting-started)
+- [Clash Royale documentation](https://developer.clashroyale.com/#/documentation)
+- [Brawl Stars documentation](https://developer.brawlstars.com/#/documentation)
+
+## Company
+
+- [Supercell website](https://www.supercell.com)
+- [Games](https://supercell.com/en/games/)
+- [Support](https://support.supercell.com/)
+- [Security policy (security.txt)](https://supercell.com/.well-known/security.txt): Contact mailto:vulncoord@supercell.com
+- [Terms of Service](https://supercell.com/en/terms-of-service/)
+- [Privacy Policy](https://supercell.com/en/privacy-policy/)
+
+## Artifacts
+
+- [Authentication profile](authentication/supercell-authentication.yml)
+- [Domain security probe](security/supercell-domain-security.yml)
+- [Vulnerability disclosure](security/supercell-vulnerability-disclosure.yml)
+- [Well-known index](well-known/supercell-well-known.yml)

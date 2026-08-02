@@ -1,8 +1,13 @@
 aid: supercell
 name: Supercell
-description: 'Supercell is a company surfaced as a portfolio company of accel, atomico, ivp and added
-  to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Supercell is the Finnish mobile game developer behind Clash of Clans, Clash
+  Royale, Brawl Stars, Hay Day, Boom Beach and Squad Busters. Supercell operates three official
+  public game APIs — the Clash of Clans API, the Clash Royale API and the Brawl Stars API —
+  that expose read-only game data including clan search, global and local leaderboards, player
+  and clan profiles, leagues, cards, brawlers, rankings and live events. Access is authenticated
+  with a JWT bearer API token created in each game''s developer portal and locked to a set of
+  whitelisted IP addresses. Added to the API Evangelist network from a VC-portfolio lead and
+  enriched with verified developer-surface artifacts.'
 url: https://raw.githubusercontent.com/api-evangelist/supercell/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,18 +17,112 @@ x-backed-by:
 - ivp
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://cdn.supercell.com/gameapi/website/og_coc_share_img.jpg
 tags:
 - Company
 - Consumer
-apis: []
+- Gaming
+- Mobile Games
+- Video Games
+- Game Data
+- Developer API
+- Leaderboards
+- Esports
+apis:
+- name: Clash of Clans API
+  description: Read-only access to Clash of Clans game data — clan search, global and local
+    leaderboards, clan and player profiles, leagues, war logs, capital raid seasons and the
+    Gold Pass season. Authenticated with a JWT bearer API token whitelisted to specific IPs.
+  humanURL: https://developer.clashofclans.com
+  baseURL: https://api.clashofclans.com/v1
+  tags:
+  - Gaming
+  - Game Data
+  - Leaderboards
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.clashofclans.com
+  - type: Documentation
+    url: https://developer.clashofclans.com/#/documentation
+  - type: GettingStarted
+    url: https://developer.clashofclans.com/#/getting-started
+- name: Clash Royale API
+  description: Read-only access to Clash Royale game data — clan search, player and clan
+    profiles, cards, tournaments, challenges, global tournaments and locations/leaderboards.
+    Authenticated with a JWT bearer API token whitelisted to specific IPs.
+  humanURL: https://developer.clashroyale.com
+  baseURL: https://api.clashroyale.com/v1
+  tags:
+  - Gaming
+  - Game Data
+  - Leaderboards
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.clashroyale.com
+  - type: Documentation
+    url: https://developer.clashroyale.com/#/documentation
+- name: Brawl Stars API
+  description: Read-only access to Brawl Stars game data — player and club profiles, club
+    members, rankings/leaderboards, brawlers, gadgets/star-powers and rotating events.
+    Authenticated with a JWT bearer API token whitelisted to specific IPs.
+  humanURL: https://developer.brawlstars.com
+  baseURL: https://api.brawlstars.com/v1
+  tags:
+  - Gaming
+  - Game Data
+  - Leaderboards
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.brawlstars.com
+  - type: Documentation
+    url: https://developer.brawlstars.com/#/documentation
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: VulnerabilityDisclosure
+  url: security/supercell-vulnerability-disclosure.yml
+- type: Security
+  url: https://supercell.com/.well-known/security.txt
+- type: DomainSecurity
+  url: security/supercell-domain-security.yml
+- type: Authentication
+  url: authentication/supercell-authentication.yml
+- type: WellKnown
+  url: well-known/supercell-well-known.yml
+- type: LLMsTxt
+  url: llms/supercell-llms.txt
 - type: Website
-  url: http://www.supercell.com
+  url: https://www.supercell.com
+- type: DeveloperPortal
+  url: https://developer.clashofclans.com
+- type: TermsOfService
+  url: https://supercell.com/en/terms-of-service/
+- type: PrivacyPolicy
+  url: https://supercell.com/en/privacy-policy/
+- type: Support
+  url: https://support.supercell.com/
+- type: SecurityTxt
+  url: https://supercell.com/.well-known/security.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1

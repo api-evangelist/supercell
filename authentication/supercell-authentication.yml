@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.clashofclans.com/#/documentation
+note: >-
+  No public OpenAPI is fetchable (the API hosts require auth and the portals are SPAs), so
+  this profile is captured from the documented and live-verified auth mechanism rather than
+  derived from a spec. All three Supercell game APIs (Clash of Clans, Clash Royale, Brawl
+  Stars) share one identical model. Verified live: unauthenticated calls to each api.*/v1
+  host return HTTP 403 {"reason":"accessDenied","message":"Missing authorization"}.
+summary:
+  types: [http]
+  http_schemes: [bearer]
+  bearer_format: JWT
+  ip_whitelisting: true
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  description: >-
+    A long-lived JWT API token created in the game's developer portal and passed as
+    "Authorization: Bearer <token>". Each token is bound to a set of allowed (whitelisted)
+    IP addresses at creation time; requests from other IPs are rejected. All endpoints are
+    read-only.
+  applies_to:
+  - https://api.clashofclans.com/v1
+  - https://api.clashroyale.com/v1
+  - https://api.brawlstars.com/v1
+  token_management:
+  - https://developer.clashofclans.com
+  - https://developer.clashroyale.com
+  - https://developer.brawlstars.com

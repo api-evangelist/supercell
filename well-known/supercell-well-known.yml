@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/ on Supercell website + game API hosts
+notes: >-
+  Only supercell.com publishes a real RFC 9116 security.txt (text/plain). The three
+  developer.* portals are single-page apps that return the index.html shell (HTTP 200,
+  text/html) for every /.well-known/ path, so those are NOT real discovery documents and
+  are recorded as such. The api.* hosts return 404 for all /.well-known/ paths.
+hosts:
+- host: https://supercell.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    file: supercell-security.txt
+- host: https://developer.clashofclans.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    real: false
+    note: SPA catch-all (index.html), not a real security.txt
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    real: false
+    note: SPA catch-all (index.html), not real OIDC metadata
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    real: false
+    note: SPA catch-all (index.html), not real OAuth metadata
+- host: https://api.clashofclans.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://api.brawlstars.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://api.clashroyale.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
